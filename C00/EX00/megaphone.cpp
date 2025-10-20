@@ -6,7 +6,7 @@
 /*   By: dibsejra <dibsejra@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 20:09:01 by dibsejra          #+#    #+#             */
-/*   Updated: 2025/10/20 21:20:36 by dibsejra         ###   ########.fr       */
+/*   Updated: 2025/10/20 22:35:12 by dibsejra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,6 @@ int main(int argc, char **argv)
 			str[j] = std::toupper(str[j]);
 		}
 		std::cout << str;
-		if(i < argc -1)
-			std::cout << ' ';
 	}
 	std::cout << '\n';
 	return 0;
