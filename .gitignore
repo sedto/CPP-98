@@ -1,0 +1,16 @@
+*.o
+*.a
+
+*.tmp
+*.temp
+*~
+.DS_Store
+
+
+.vscode/
+.idea/
+*.swp
+*.swo
+
+core
+vgcore.*

@@ -5,9 +5,12 @@ COLOR_RESET = \033[0m
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 NAME = phonebook
-SRC = phonebook.cpp
+SRC = phonebook.cpp main.cpp
 OBJ_DIR = obj
 OBJ = $(patsubst %.cpp,$(OBJ_DIR)/%.o,$(SRC))
+
+HEADERS = phonebook.hpp
+INCLUDES = -I.
 
 all: $(NAME)
 
@@ -19,8 +22,8 @@ $(NAME): $(OBJ)
 $(OBJ_DIR):
 	@mkdir -p $(OBJ_DIR)
 
-$(OBJ_DIR)/%.o: %.cpp | $(OBJ_DIR)
-	@$(CXX) $(CXXFLAGS) -c $< -o $@
+$(OBJ_DIR)/%.o: %.cpp $(HEADERS) | $(OBJ_DIR)
+	@$(CXX) $(CXXFLAGS) $(INCLUDES) -c $< -o $@
 
 clean:
 	@rm -rf $(OBJ_DIR)
