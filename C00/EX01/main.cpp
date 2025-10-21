@@ -6,13 +6,12 @@
 /*   By: dibsejra <dibsejra@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 13:18:28 by dibsejra          #+#    #+#             */
-/*   Updated: 2025/10/21 19:28:10 by dibsejra         ###   ########.fr       */
+/*   Updated: 2025/10/21 20:45:12 by dibsejra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phonebook.hpp"
-#include <sstream>
-#include <cstdlib>
+
 
 std::string formatColumn(std::string str)
 {

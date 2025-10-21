@@ -6,11 +6,16 @@
 /*   By: dibsejra <dibsejra@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 11:45:31 by dibsejra          #+#    #+#             */
-/*   Updated: 2025/10/21 13:06:14 by dibsejra         ###   ########.fr       */
+/*   Updated: 2025/10/21 20:46:20 by dibsejra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef PHONEBOOK_HPP
+#define PHONEBOOK_HPP
+
 #include <iostream>
+#include <sstream>
+#include <cstdlib>
 #include <string>
 #include <cctype>
 
@@ -52,8 +57,11 @@ class PhoneBook
 	int _index;
 
 	public:
+	//Constructor
 	PhoneBook();
+
 	void addContact (Contact c);
 	Contact getContact(int idx);
 	int getContactCount(void) const;
 };
+#endif
