@@ -1,22 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dibsejra <dibsejra@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/21 13:18:28 by dibsejra          #+#    #+#             */
-/*   Updated: 2025/10/23 16:49:15 by dibsejra         ###   ########.fr       */
+/*   Created: 2025/10/23 16:58:18 by dibsejra          #+#    #+#             */
+/*   Updated: 2025/10/23 19:03:18 by dibsejra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-int main ()
+Zombie::Zombie()
 {
-	randomChump("Sami le salami");
-	Zombie *z1 = newZombie("Cbibi");
-	z1->annouce();
-	delete z1;
-	return(0);
+	this->_name = "";
 }
+
+Zombie::Zombie(std::string name)
+{
+	this->_name = name;
+}
+
+Zombie::~Zombie(void)
+{
+	std::cout << this->_name << ": is destroyed" << std::endl;
+}
+
+void Zombie::announce(void)
+{
+	std::cout << this->_name << ": BraiiiiiiinnnzzzZ" << std::endl;
+}
+
+void Zombie::setName(std::string name)
+{
+	this->_name = name;
+}
+

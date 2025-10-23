@@ -4,8 +4,8 @@ COLOR_RESET = \033[0m
 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = BraiiiiiiinnnzzzZ
-SRC = Zombie.cpp main.cpp newZombie.cpp randomChump.cpp
+NAME = Moar_Brainz
+SRC = Zombie.cpp main.cpp zombieHorde.cpp
 OBJ_DIR = obj
 OBJ = $(patsubst %.cpp,$(OBJ_DIR)/%.o,$(SRC))
 

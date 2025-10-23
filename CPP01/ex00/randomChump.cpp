@@ -1,22 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   randomChump.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dibsejra <dibsejra@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/21 13:18:28 by dibsejra          #+#    #+#             */
-/*   Updated: 2025/10/23 16:49:15 by dibsejra         ###   ########.fr       */
+/*   Created: 2025/10/23 16:48:41 by dibsejra          #+#    #+#             */
+/*   Updated: 2025/10/23 19:04:49 by dibsejra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-int main ()
+void randomChump( std::string name )
 {
-	randomChump("Sami le salami");
-	Zombie *z1 = newZombie("Cbibi");
-	z1->annouce();
-	delete z1;
-	return(0);
+	Zombie z(name);
+	z.announce();
 }

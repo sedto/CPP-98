@@ -5,18 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dibsejra <dibsejra@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/21 13:18:28 by dibsejra          #+#    #+#             */
-/*   Updated: 2025/10/23 16:49:15 by dibsejra         ###   ########.fr       */
+/*   Created: 2025/10/23 16:59:38 by dibsejra          #+#    #+#             */
+/*   Updated: 2025/10/23 19:03:38 by dibsejra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-int main ()
+int main()
 {
-	randomChump("Sami le salami");
-	Zombie *z1 = newZombie("Cbibi");
-	z1->annouce();
-	delete z1;
-	return(0);
+	int N = 10;
+	std::string name = "Julius";
+	Zombie *horde = zombiehorde(N, name);
+	for(int i = 0; i < N; i++)
+	{
+		horde[i].announce();
+	}
+	delete[] horde;
 }

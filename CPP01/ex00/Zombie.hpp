@@ -1,28 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   BraiiiiiiinnnzzzZ.cpp                              :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dibsejra <dibsejra@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 13:18:28 by dibsejra          #+#    #+#             */
-/*   Updated: 2025/10/23 15:29:45 by dibsejra         ###   ########.fr       */
+/*   Updated: 2025/10/23 19:04:39 by dibsejra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "BraiiiiiiinnnzzzZ.hpp"
+#ifndef ZOMBIE_HPP
+#define ZOMBIE_HPP
 
+#include <iostream>
+#include <sstream>
+#include <cstdlib>
+#include <string>
+#include <cctype>
 
-Zombie::Zombie(std::string name)
+class Zombie
 {
-	this->_name = name;
-}
-Zombie::~Zombie(void)
-{
-	std::cout << this->_name << ": is destroyed" << std::endl;
-}
-void Zombie::annouce(void)
-{
-	std::cout << this->_name << ": BraiiiiiiinnnzzzZ" << std::endl;
-}
+	private:
+	std::string _name;
 
+	public:
+	Zombie(std::string name);
+	
+	~Zombie(void);
+	
+	void announce(void);
+};
+
+Zombie* newZombie(std::string name);
+void randomChump(std::string name);
+
+#endif
