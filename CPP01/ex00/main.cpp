@@ -6,7 +6,7 @@
 /*   By: dibsejra <dibsejra@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 13:18:28 by dibsejra          #+#    #+#             */
-/*   Updated: 2025/10/23 16:49:15 by dibsejra         ###   ########.fr       */
+/*   Updated: 2025/10/23 19:07:57 by dibsejra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main ()
 {
 	randomChump("Sami le salami");
 	Zombie *z1 = newZombie("Cbibi");
-	z1->annouce();
+	z1->announce();
 	delete z1;
 	return(0);
 }
