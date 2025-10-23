@@ -6,7 +6,7 @@
 /*   By: dibsejra <dibsejra@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 16:58:20 by dibsejra          #+#    #+#             */
-/*   Updated: 2025/10/23 19:03:27 by dibsejra         ###   ########.fr       */
+/*   Updated: 2025/10/23 19:12:26 by dibsejra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,5 @@ class Zombie
 
 };
 	Zombie* zombiehorde(int N, std::string name);
-
-
-
 
 #endif
