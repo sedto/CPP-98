@@ -4,7 +4,7 @@ COLOR_RESET = \033[0m
 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = Moar_Brainz
+NAME = Weapon
 SRC = HumanA.cpp HumanB.cpp Weapon.cpp main.cpp
 OBJ_DIR = obj
 OBJ = $(patsubst %.cpp,$(OBJ_DIR)/%.o,$(SRC))
