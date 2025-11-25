@@ -6,7 +6,7 @@
 /*   By: dibsejra <dibsejra@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 13:18:28 by dibsejra          #+#    #+#             */
-/*   Updated: 2025/10/21 20:45:12 by dibsejra         ###   ########.fr       */
+/*   Updated: 2025/11/18 16:33:13 by dibsejra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,12 @@ void searchContactMode(PhoneBook &pb)
     std::string input;
     std::cout << "? Enter index: ";
     std::getline(std::cin, input);
-    
+
+    if (std::cin.eof() || std::cin.fail())
+    {
+        std::cout << std::endl;
+        return;
+    }
     if (input.empty())
     {
         std::cout << "Error: Invalid index!" << std::endl;
@@ -96,6 +101,11 @@ void addContactMode(PhoneBook &pb)
 		std::cout << "First name ?\t";
 		std::getline(std::cin, input);
 
+		if (std::cin.eof() || std::cin.fail())
+		{
+			std::cout << std::endl;
+			return;
+		}
 		if (input.empty())
 		{
 			continue;
@@ -107,7 +117,12 @@ void addContactMode(PhoneBook &pb)
 	{
 		std::cout << "Last name ?\t";
 		std::getline(std::cin, input);
-		
+
+		if (std::cin.eof() || std::cin.fail())
+		{
+			std::cout << std::endl;
+			return;
+		}
 		if(input.empty())
 		{
 			continue;
@@ -119,7 +134,12 @@ void addContactMode(PhoneBook &pb)
 	{
 		std::cout << "Nickname ?\t";
 		std::getline(std::cin, input);
-		
+
+		if (std::cin.eof() || std::cin.fail())
+		{
+			std::cout << std::endl;
+			return;
+		}
 		if(input.empty())
 		{
 			continue;
@@ -131,7 +151,12 @@ void addContactMode(PhoneBook &pb)
 	{
 		std::cout << "Phone ?\t";
 		std::getline(std::cin, input);
-		
+
+		if (std::cin.eof() || std::cin.fail())
+		{
+			std::cout << std::endl;
+			return;
+		}
 		if(input.empty() || !isValidPhone(input))
 		{
 			std::cout << "Invalid phone number use only 0 - 9\n";
@@ -144,7 +169,12 @@ void addContactMode(PhoneBook &pb)
 	{
 		std::cout << "Darkest Secret?\t";
 		std::getline(std::cin, input);
-		
+
+		if (std::cin.eof() || std::cin.fail())
+		{
+			std::cout << std::endl;
+			return;
+		}
 		if(input.empty())
 		{
 			continue;
@@ -164,7 +194,12 @@ int main(void)
 	{
 		std::cout << "[phonebook] >";
 		std::getline(std::cin, command);
-	
+
+		if (std::cin.eof() || std::cin.fail())
+		{
+			std::cout << std::endl;
+			break;
+		}
 		if (command == "add" || command == "ADD")
 		{
 			addContactMode(pb);
