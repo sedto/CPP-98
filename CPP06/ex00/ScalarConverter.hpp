@@ -1,0 +1,47 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dibsejra <dibsejra@student.42lausanne.c    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/12 12:30:00 by dibsejra          #+#    #+#             */
+/*   Updated: 2026/01/12 12:30:01 by dibsejra         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef SCALARCONVERTER_HPP
+#define SCALARCONVERTER_HPP
+
+#include <string>
+#include <iostream>
+#include <sstream>
+#include <limits>
+#include <cmath>
+#include <cstdlib>
+
+class ScalarConverter
+{
+private:
+	ScalarConverter(void);
+	ScalarConverter(const ScalarConverter& other);
+	ScalarConverter& operator=(const ScalarConverter& other);
+	~ScalarConverter(void);
+
+	static bool isChar(const std::string& literal);
+	static bool isInt(const std::string& literal);
+	static bool isFloat(const std::string& literal);
+	static bool isDouble(const std::string& literal);
+	static bool isPseudoLiteral(const std::string& literal);
+
+	static void convertFromChar(const std::string& literal);
+	static void convertFromInt(const std::string& literal);
+	static void convertFromFloat(const std::string& literal);
+	static void convertFromDouble(const std::string& literal);
+	static void convertPseudoLiteral(const std::string& literal);
+
+public:
+	static void convert(const std::string& literal);
+};
+
+#endif
