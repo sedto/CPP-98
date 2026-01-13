@@ -6,124 +6,95 @@
 /*   By: dibsejra <dibsejra@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 12:13:55 by dibsejra          #+#    #+#             */
-/*   Updated: 2026/01/12 12:13:56 by dibsejra         ###   ########.fr       */
+/*   Updated: 2026/01/13 20:02:13 by dibsejra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
-#include "ShrubberyCreationForm.hpp"
-#include "RobotomyRequestForm.hpp"
-#include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 int main() {
-	std::cout << "=== Test 1: ShrubberyCreationForm ===" << std::endl;
+	std::cout << "\nTest 1: Intern creates ShrubberyCreationForm" << std::endl;
 	try {
+		Intern intern;
 		Bureaucrat bob("Bob", 137);
-		ShrubberyCreationForm shrub("home");
+		AForm* shrub = intern.makeForm("shrubbery creation", "home");
 
-		std::cout << shrub << std::endl;
-		bob.signForm(shrub);
-		bob.executeForm(shrub);
+		std::cout << *shrub << std::endl;
+		bob.signForm(*shrub);
+		bob.executeForm(*shrub);
+		delete shrub;
 	}
 	catch (std::exception& e) {
 		std::cout << "Exception: " << e.what() << std::endl;
 	}
 
-	std::cout << "\n=== Test 2: ShrubberyCreationForm - Failed execution (not signed) ===" << std::endl;
+	std::cout << "\nTest 2: Intern creates RobotomyRequestForm" << std::endl;
 	try {
-		Bureaucrat alice("Alice", 100);
-		ShrubberyCreationForm shrub2("garden");
-
-		alice.executeForm(shrub2);
-	}
-	catch (std::exception& e) {
-		std::cout << "Exception: " << e.what() << std::endl;
-	}
-
-	std::cout << "\n=== Test 3: RobotomyRequestForm ===" << std::endl;
-	try {
+		Intern intern;
 		Bureaucrat charlie("Charlie", 40);
-		RobotomyRequestForm robot("Bender");
+		AForm* robot = intern.makeForm("robotomy request", "Bender");
 
-		std::cout << robot << std::endl;
-		charlie.signForm(robot);
-		charlie.executeForm(robot);
+		std::cout << *robot << std::endl;
+		charlie.signForm(*robot);
+		charlie.executeForm(*robot);
+		delete robot;
 	}
 	catch (std::exception& e) {
 		std::cout << "Exception: " << e.what() << std::endl;
 	}
 
-	std::cout << "\n=== Test 4: RobotomyRequestForm - Multiple executions ===" << std::endl;
+	std::cout << "\nTest 3: Intern creates PresidentialPardonForm" << std::endl;
 	try {
-		Bureaucrat dave("Dave", 1);
-		RobotomyRequestForm robot2("Marvin");
-
-		dave.signForm(robot2);
-		for (int i = 0; i < 5; i++) {
-			std::cout << "\nAttempt " << (i + 1) << ":" << std::endl;
-			dave.executeForm(robot2);
-		}
-	}
-	catch (std::exception& e) {
-		std::cout << "Exception: " << e.what() << std::endl;
-	}
-
-	std::cout << "\n=== Test 5: PresidentialPardonForm ===" << std::endl;
-	try {
+		Intern intern;
 		Bureaucrat president("President", 1);
-		PresidentialPardonForm pardon("Arthur Dent");
+		AForm* pardon = intern.makeForm("presidential pardon", "Arthur Dent");
 
-		std::cout << pardon << std::endl;
-		president.signForm(pardon);
-		president.executeForm(pardon);
+		std::cout << *pardon << std::endl;
+		president.signForm(*pardon);
+		president.executeForm(*pardon);
+		delete pardon;
 	}
 	catch (std::exception& e) {
 		std::cout << "Exception: " << e.what() << std::endl;
 	}
 
-	std::cout << "\n=== Test 6: PresidentialPardonForm - Grade too low to sign ===" << std::endl;
+	std::cout << "\nTest 4: Intern with invalid form name" << std::endl;
 	try {
-		Bureaucrat lowGrade("LowGrade", 30);
-		PresidentialPardonForm pardon2("Ford Prefect");
-
-		lowGrade.signForm(pardon2);
-		lowGrade.executeForm(pardon2);
+		Intern intern;
+		AForm* invalid = intern.makeForm("invalid form", "target");
+		delete invalid;
 	}
 	catch (std::exception& e) {
 		std::cout << "Exception: " << e.what() << std::endl;
 	}
 
-	std::cout << "\n=== Test 7: PresidentialPardonForm - Grade too low to execute ===" << std::endl;
+	std::cout << "\nTest 5: Multiple interns creating different forms" << std::endl;
 	try {
-		Bureaucrat signer("Signer", 20);
-		Bureaucrat executor("Executor", 10);
-		PresidentialPardonForm pardon3("Zaphod");
+		Intern intern1;
+		Intern intern2;
+		Intern intern3;
+		Bureaucrat boss("Boss", 1);
 
-		signer.signForm(pardon3);
-		executor.executeForm(pardon3); // Should fail
-	}
-	catch (std::exception& e) {
-		std::cout << "Exception: " << e.what() << std::endl;
-	}
+		AForm* form1 = intern1.makeForm("shrubbery creation", "garden");
+		AForm* form2 = intern2.makeForm("robotomy request", "Leblanc");
+		AForm* form3 = intern3.makeForm("presidential pardon", "Teemo");
 
-	std::cout << "\n=== Test 8: All forms with highest bureaucrat ===" << std::endl;
-	try {
-		Bureaucrat supreme("Supreme", 1);
-		ShrubberyCreationForm shrub("office");
-		RobotomyRequestForm robot("C-3PO");
-		PresidentialPardonForm pardon("Trillian");
-
-		supreme.signForm(shrub);
-		supreme.executeForm(shrub);
+		boss.signForm(*form1);
+		boss.executeForm(*form1);
 
 		std::cout << std::endl;
-		supreme.signForm(robot);
-		supreme.executeForm(robot);
+		boss.signForm(*form2);
+		boss.executeForm(*form2);
 
 		std::cout << std::endl;
-		supreme.signForm(pardon);
-		supreme.executeForm(pardon);
+		boss.signForm(*form3);
+		boss.executeForm(*form3);
+
+		delete form1;
+		delete form2;
+		delete form3;
 	}
 	catch (std::exception& e) {
 		std::cout << "Exception: " << e.what() << std::endl;

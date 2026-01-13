@@ -6,7 +6,7 @@
 /*   By: dibsejra <dibsejra@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 12:13:55 by dibsejra          #+#    #+#             */
-/*   Updated: 2026/01/12 12:13:56 by dibsejra         ###   ########.fr       */
+/*   Updated: 2026/01/13 19:50:26 by dibsejra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include "PresidentialPardonForm.hpp"
 
 int main() {
-	std::cout << "=== Test 1: ShrubberyCreationForm ===" << std::endl;
+	std::cout << " Test 1: ShrubberyCreationForm" << std::endl;
 	try {
 		Bureaucrat bob("Bob", 137);
 		ShrubberyCreationForm shrub("home");
@@ -30,7 +30,7 @@ int main() {
 		std::cout << "Exception: " << e.what() << std::endl;
 	}
 
-	std::cout << "\n=== Test 2: ShrubberyCreationForm - Failed execution (not signed) ===" << std::endl;
+	std::cout << "\nTest 2: ShrubberyCreationForm - Failed execution (not signed)" << std::endl;
 	try {
 		Bureaucrat alice("Alice", 100);
 		ShrubberyCreationForm shrub2("garden");
@@ -41,7 +41,7 @@ int main() {
 		std::cout << "Exception: " << e.what() << std::endl;
 	}
 
-	std::cout << "\n=== Test 3: RobotomyRequestForm ===" << std::endl;
+	std::cout << "\n Test 3: RobotomyRequestForm" << std::endl;
 	try {
 		Bureaucrat charlie("Charlie", 40);
 		RobotomyRequestForm robot("Bender");
@@ -54,7 +54,7 @@ int main() {
 		std::cout << "Exception: " << e.what() << std::endl;
 	}
 
-	std::cout << "\n=== Test 4: RobotomyRequestForm - Multiple executions ===" << std::endl;
+	std::cout << "\n Test 4: RobotomyRequestForm - Multiple executions" << std::endl;
 	try {
 		Bureaucrat dave("Dave", 1);
 		RobotomyRequestForm robot2("Marvin");
@@ -69,7 +69,7 @@ int main() {
 		std::cout << "Exception: " << e.what() << std::endl;
 	}
 
-	std::cout << "\n=== Test 5: PresidentialPardonForm ===" << std::endl;
+	std::cout << "\n Test 5: PresidentialPardonForm" << std::endl;
 	try {
 		Bureaucrat president("President", 1);
 		PresidentialPardonForm pardon("Arthur Dent");
@@ -82,7 +82,7 @@ int main() {
 		std::cout << "Exception: " << e.what() << std::endl;
 	}
 
-	std::cout << "\n=== Test 6: PresidentialPardonForm - Grade too low to sign ===" << std::endl;
+	std::cout << "\n Test 6: PresidentialPardonForm - Grade too low to sign" << std::endl;
 	try {
 		Bureaucrat lowGrade("LowGrade", 30);
 		PresidentialPardonForm pardon2("Ford Prefect");
@@ -94,7 +94,7 @@ int main() {
 		std::cout << "Exception: " << e.what() << std::endl;
 	}
 
-	std::cout << "\n=== Test 7: PresidentialPardonForm - Grade too low to execute ===" << std::endl;
+	std::cout << "\nTest 7: PresidentialPardonForm - Grade too low to execute" << std::endl;
 	try {
 		Bureaucrat signer("Signer", 20);
 		Bureaucrat executor("Executor", 10);
@@ -107,7 +107,7 @@ int main() {
 		std::cout << "Exception: " << e.what() << std::endl;
 	}
 
-	std::cout << "\n=== Test 8: All forms with highest bureaucrat ===" << std::endl;
+	std::cout << "\nTest 8: All forms with highest bureaucrat" << std::endl;
 	try {
 		Bureaucrat supreme("Supreme", 1);
 		ShrubberyCreationForm shrub("office");

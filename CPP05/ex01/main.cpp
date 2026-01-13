@@ -14,7 +14,7 @@
 #include "Form.hpp"
 
 int main() {
-	std::cout << "=== Test 1: Valid form creation ===" << std::endl;
+	std::cout << "\nTest 1: Valid form creation" << std::endl;
 	try {
 		Form form1("Tax Form", 50, 25);
 		std::cout << form1 << std::endl;
@@ -23,7 +23,7 @@ int main() {
 		std::cout << "Exception: " << e.what() << std::endl;
 	}
 
-	std::cout << "\n=== Test 2: Form with grade too high ===" << std::endl;
+	std::cout << "\nTest 2: Form with grade too high" << std::endl;
 	try {
 		Form form2("Invalid Form", 0, 50);
 		std::cout << form2 << std::endl;
@@ -32,7 +32,7 @@ int main() {
 		std::cout << "Exception: " << e.what() << std::endl;
 	}
 
-	std::cout << "\n=== Test 3: Form with grade too low ===" << std::endl;
+	std::cout << "\nTest 3: Form with grade too low" << std::endl;
 	try {
 		Form form3("Invalid Form", 50, 151);
 		std::cout << form3 << std::endl;
@@ -41,7 +41,7 @@ int main() {
 		std::cout << "Exception: " << e.what() << std::endl;
 	}
 
-	std::cout << "\n=== Test 4: Successful form signing ===" << std::endl;
+	std::cout << "\nTest 4: Successful form signing" << std::endl;
 	try {
 		Bureaucrat alice("Alice", 30);
 		Form form4("Building Permit", 50, 25);
@@ -53,7 +53,7 @@ int main() {
 		std::cout << "Exception: " << e.what() << std::endl;
 	}
 
-	std::cout << "\n=== Test 5: Failed form signing (grade too low) ===" << std::endl;
+	std::cout << "\nTest 5: Failed form signing (grade too low)" << std::endl;
 	try {
 		Bureaucrat bob("Bob", 100);
 		Form form5("Top Secret", 50, 25);
@@ -65,7 +65,7 @@ int main() {
 		std::cout << "Exception: " << e.what() << std::endl;
 	}
 
-	std::cout << "\n=== Test 6: Multiple bureaucrats signing ===" << std::endl;
+	std::cout << "\nTest 6: Multiple bureaucrats signing" << std::endl;
 	try {
 		Bureaucrat charlie("Charlie", 10);
 		Bureaucrat dave("Dave", 60);
@@ -80,7 +80,7 @@ int main() {
 		std::cout << "Exception: " << e.what() << std::endl;
 	}
 
-	std::cout << "\n=== Test 7: Signing already signed form ===" << std::endl;
+	std::cout << "\nTest 7: Signing already signed form" << std::endl;
 	try {
 		Bureaucrat eve("Eve", 20);
 		Form form7("Passport", 40, 20);
