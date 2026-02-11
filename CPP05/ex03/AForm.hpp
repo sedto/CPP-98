@@ -6,7 +6,7 @@
 /*   By: dibsejra <dibsejra@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 12:16:17 by dibsejra          #+#    #+#             */
-/*   Updated: 2026/01/12 12:16:18 by dibsejra         ###   ########.fr       */
+/*   Updated: 2026/02/11 18:44:15 by dibsejra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,10 @@ public:
 	};
 
 	class FormNotSignedException : public std::exception {
+	public:
+		virtual const char* what() const throw();
+	};
+	class AlreadySignedException : public std::exception {
 	public:
 		virtual const char* what() const throw();
 	};

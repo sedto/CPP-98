@@ -6,7 +6,7 @@
 /*   By: dibsejra <dibsejra@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 12:13:34 by dibsejra          #+#    #+#             */
-/*   Updated: 2026/01/12 12:26:19 by dibsejra         ###   ########.fr       */
+/*   Updated: 2026/02/11 18:45:56 by dibsejra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,9 +66,14 @@ int AForm::getGradeToExecute(void) const
 
 void AForm::beSigned(const Bureaucrat& bureaucrat)
 {
-	if (bureaucrat.getGrade() > this->_gradeToSign)
+	if  (bureaucrat.getGrade() > this->_gradeToSign)
 		throw GradeTooLowException();
-	this->_signed = true;
+	if 	(this->isSigned())
+		{
+			throw AlreadySignedException();
+		}
+	else
+		this->_signed = true;
 }
 
 void AForm::execute(Bureaucrat const & executor) const
@@ -93,6 +98,10 @@ const char* AForm::GradeTooLowException::what(void) const throw()
 const char* AForm::FormNotSignedException::what(void) const throw()
 {
 	return "Form is not signed!";
+}
+const char* AForm::AlreadySignedException::what(void) const throw()
+{
+	return "Form is already signed!";
 }
 
 std::ostream& operator<<(std::ostream& os, const AForm& form)
