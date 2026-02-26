@@ -6,7 +6,7 @@
 /*   By: dibsejra <dibsejra@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 12:37:05 by dibsejra          #+#    #+#             */
-/*   Updated: 2026/01/12 12:37:06 by dibsejra         ###   ########.fr       */
+/*   Updated: 2026/02/26 12:44:18 by dibsejra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 int main(void)
 {
-	std::cout << "=== Test 1: Empty array ===" << std::endl;
+	std::cout << "Test 1: Empty array" << std::endl;
 	try
 	{
 		Array<int> empty;
@@ -27,7 +27,7 @@ int main(void)
 		std::cout << "Exception: " << e.what() << std::endl;
 	}
 
-	std::cout << "\n=== Test 2: Array of integers ===" << std::endl;
+	std::cout << "\nTest 2: Array of integers" << std::endl;
 	try
 	{
 		Array<int> numbers(5);
@@ -50,7 +50,7 @@ int main(void)
 		std::cout << "Exception: " << e.what() << std::endl;
 	}
 
-	std::cout << "\n=== Test 3: Copy constructor ===" << std::endl;
+	std::cout << "\nTest 3: Copy constructor" << std::endl;
 	try
 	{
 		Array<int> original(3);
@@ -80,7 +80,7 @@ int main(void)
 		std::cout << "Exception: " << e.what() << std::endl;
 	}
 
-	std::cout << "\n=== Test 4: Assignment operator ===" << std::endl;
+	std::cout << "\nTest 4: Assignment operator" << std::endl;
 	try
 	{
 		Array<int> a(3);
@@ -111,7 +111,7 @@ int main(void)
 		std::cout << "Exception: " << e.what() << std::endl;
 	}
 
-	std::cout << "\n=== Test 5: Out of bounds exception ===" << std::endl;
+	std::cout << "\nTest 5: Out of bounds exception" << std::endl;
 	try
 	{
 		Array<int> test(5);
@@ -124,7 +124,7 @@ int main(void)
 		std::cout << "Exception caught: " << e.what() << std::endl;
 	}
 
-	std::cout << "\n=== Test 6: Array of strings ===" << std::endl;
+	std::cout << "\nTest 6: Array of strings" << std::endl;
 	try
 	{
 		Array<std::string> strings(3);
@@ -144,7 +144,7 @@ int main(void)
 		std::cout << "Exception: " << e.what() << std::endl;
 	}
 
-	std::cout << "\n=== Test 7: Array of doubles ===" << std::endl;
+	std::cout << "\nTest 7: Array of doubles" << std::endl;
 	try
 	{
 		Array<double> doubles(4);

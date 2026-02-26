@@ -6,7 +6,7 @@
 /*   By: dibsejra <dibsejra@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 12:32:35 by dibsejra          #+#    #+#             */
-/*   Updated: 2026/01/12 12:32:36 by dibsejra         ###   ########.fr       */
+/*   Updated: 2026/02/26 12:41:37 by dibsejra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 int main(void)
 {
-	std::cout << "=== Test 1: Random generation ===" << std::endl;
+	std::cout << "Test 1: Random generation" << std::endl;
 	Base* random = generate();
 	std::cout << "Identify with pointer: ";
 	identify(random);
@@ -26,7 +26,7 @@ int main(void)
 	identify(*random);
 	delete random;
 
-	std::cout << "\n=== Test 2: All types ===" << std::endl;
+	std::cout << "\nTest 2: All types" << std::endl;
 	Base* a = new A();
 	Base* b = new B();
 	Base* c = new C();

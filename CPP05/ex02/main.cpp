@@ -15,8 +15,12 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include <cstdlib>
+#include <ctime>
 
 int main() {
+	std::srand(std::time(0));
+
 	std::cout << " Test 1: ShrubberyCreationForm" << std::endl;
 	try {
 		Bureaucrat bob("Bob", 137);

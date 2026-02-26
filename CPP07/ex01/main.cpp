@@ -6,7 +6,7 @@
 /*   By: dibsejra <dibsejra@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 12:36:05 by dibsejra          #+#    #+#             */
-/*   Updated: 2026/01/12 12:36:06 by dibsejra         ###   ########.fr       */
+/*   Updated: 2026/02/26 12:43:12 by dibsejra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,29 +36,29 @@ void toUpperCase(std::string& str)
 
 int main(void)
 {
-	std::cout << "=== Test 1: Print int array ===" << std::endl;
+	std::cout << "Test 1: Print int array" << std::endl;
 	int intArray[] = {1, 2, 3, 4, 5};
 	::iter(intArray, 5, printElement<int>);
 
-	std::cout << "\n=== Test 2: Increment int array ===" << std::endl;
+	std::cout << "\nTest 2: Increment int array" << std::endl;
 	::iter(intArray, 5, incrementElement<int>);
 	std::cout << "After increment:" << std::endl;
 	::iter(intArray, 5, printElement<int>);
 
-	std::cout << "\n=== Test 3: Print string array ===" << std::endl;
+	std::cout << "\nTest 3: Print string array" << std::endl;
 	std::string stringArray[] = {"hello", "world", "cpp", "templates"};
 	::iter(stringArray, 4, printElement<std::string>);
 
-	std::cout << "\n=== Test 4: Convert to uppercase ===" << std::endl;
+	std::cout << "\nTest 4: Convert to uppercase" << std::endl;
 	::iter(stringArray, 4, toUpperCase);
 	std::cout << "After uppercase conversion:" << std::endl;
 	::iter(stringArray, 4, printElement<std::string>);
 
-	std::cout << "\n=== Test 5: Print double array ===" << std::endl;
+	std::cout << "\nTest 5: Print double array" << std::endl;
 	double doubleArray[] = {1.1, 2.2, 3.3, 4.4};
 	::iter(doubleArray, 4, printElement<double>);
 
-	std::cout << "\n=== Test 6: Increment double array ===" << std::endl;
+	std::cout << "\nTest 6: Increment double array" << std::endl;
 	::iter(doubleArray, 4, incrementElement<double>);
 	std::cout << "After increment:" << std::endl;
 	::iter(doubleArray, 4, printElement<double>);
