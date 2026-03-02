@@ -5,10 +5,11 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dibsejra <dibsejra@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/12 12:46:00 by dibsejra          #+#    #+#             */
-/*   Updated: 2026/01/12 12:46:01 by dibsejra         ###   ########.fr       */
+/*   Created: 2026/03/02 23:49:37 by dibsejra          #+#    #+#             */
+/*   Updated: 2026/03/02 23:49:38 by dibsejra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #ifndef SPAN_HPP
 #define SPAN_HPP

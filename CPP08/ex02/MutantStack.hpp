@@ -5,10 +5,11 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dibsejra <dibsejra@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/12 13:15:00 by dibsejra          #+#    #+#             */
-/*   Updated: 2026/01/12 13:15:01 by dibsejra         ###   ########.fr       */
+/*   Created: 2026/03/02 23:49:13 by dibsejra          #+#    #+#             */
+/*   Updated: 2026/03/02 23:49:14 by dibsejra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #ifndef MUTANTSTACK_HPP
 #define MUTANTSTACK_HPP
